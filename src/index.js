@@ -253,9 +253,8 @@ class JsonApi {
       .catch((err) => {
         this.logger.error(err)
         let errorPromise = Promise.resolve(err)
-        return this.applyErrorMiddleware(errorPromise).then(err => {
-          return Promise.reject(err)
-        })
+        this.applyErrorMiddleware(errorPromise)
+        return Promise.reject(err)
       })
   }
 
