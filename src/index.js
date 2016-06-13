@@ -254,7 +254,7 @@ class JsonApi {
         this.logger.error(err)
         let errorPromise = Promise.resolve(err)
         this.applyErrorMiddleware(errorPromise)
-        return Promise.reject(err)
+        return Promise.reject(err.data)
       })
   }
 
