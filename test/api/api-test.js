@@ -300,7 +300,7 @@ describe('JsonApi', () => {
         title: ''
       })
       jsonApi.findAll('product').then((products) => {
-        expect(products.meta.totalObjects).to.eql(1)
+        expect(products.docMeta.totalObjects).to.eql(1)
         expect(products[0].id).to.eql('1')
         expect(products[0].title).to.eql('Some Title')
         done()
